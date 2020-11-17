@@ -6,6 +6,7 @@
 if((isset($_POST['id']))&&(isset($_POST['index']))){
 $id = htmlentities(mysqli_real_escape_string($link, $_POST['id']));
 $index = htmlentities(mysqli_real_escape_string($link, $_POST['index']));
+        
 switch($index){
 case "stud":
 if((isset($_POST['fio']))&&(isset($_POST['fac']))&&(isset($_POST['gruppa']))&&(isset($_POST['nz']))&&(isset($_POST['num']))){
@@ -13,11 +14,13 @@ $fio = htmlentities(mysqli_real_escape_string($link, $_POST['fio']));
 $gruppa = htmlentities(mysqli_real_escape_string($link, $_POST['gruppa']));
 $nz = htmlentities(mysqli_real_escape_string($link, $_POST['nz']));
 $num = htmlentities(mysqli_real_escape_string($link, $_POST['num']));
+        
 if((strlen($fio)==0)||(strlen($fac)==0)||(strlen($gruppa)==0)||(strlen($nz)==0)||(strlen($num)==0)){
 die("Ошибка значения пусты");
 }
 $query = "UPDATE $database.$index SET fio = '$fio', fac = '$fac', gruppa = '$gruppa', nz = '$nz', num = '$num' WHERE $database.$index.id = '$id'";
 mysqli_query($link, $query) or die("Не могу выполнить запрос!");
+
 if(mysqli_affected_rows($link)>0){
         echo("<p>Thanks! You added $index.");
         echo "<p><a href=\"index.php\"> Return</a>"; 
@@ -30,7 +33,7 @@ case "pred":
 if((isset($_POST['name']))&&(isset($_POST['fio']))){
 $name = htmlentities(mysqli_real_escape_string($link, $_POST['name']));
 $fio = htmlentities(mysqli_real_escape_string($link, $_POST['fio']));
-f((strlen($fio)==0)||(strlen($name)==0)){
+if((strlen($fio)==0)||(strlen($name)==0)){
 die("Ошибка значения пусты");
 }
 $query = "UPDATE $database.$index SET name = '$name', fio = '$fio' WHERE $database.$index.id = '$id'";
