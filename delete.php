@@ -3,6 +3,7 @@
 <html>
 <body>
 <?
+  
 if(isset($_GET['id'])&&isset($_GET['query'])){
 $id = htmlentities(mysqli_real_escape_string($link, $_GET['id']));
 $index = htmlentities(mysqli_real_escape_string($link, $_GET['query']));
