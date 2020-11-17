@@ -64,6 +64,7 @@ $result_1 = mysqli_query($link, $query_1) or die("Не могу выполнит
 $queryTab_2 = "vedm";
 $query_2 = "SELECT * FROM $database.$queryTab_2 WHERE id=$id ORDER BY $database.$queryTab_2.id ASC";
 $result_2 = mysqli_query($link, $query_2) or die("Не могу выполнить запрос!");
+
 $rows = array();
         echo("<fieldset><legend>Изменить</legend>");
         echo("<form id='form' method='post' action='save_edit.php'>");
