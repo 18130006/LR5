@@ -6,7 +6,7 @@
 if(isset($_GET['Index'])){
 $index = htmlentities(mysqli_real_escape_string($link, $_GET['Index']));
 switch($index){
-ase "stud":
+сase "stud":
         echo("<fieldset><legend>Добавить нового студента</legend>");
         echo("<form id='form' method='post' action='save_new.php'>");
         echo("Введите ФИО: <input name='fio' type='text'/> <br>");
@@ -40,7 +40,7 @@ $result_1 = mysqli_query($link, $query_1) or die("Не могу выполнит
         echo("<form id='form' method='post' action='save_new.php'>");
         echo("Введите дату: <input id='date' type='date' name='date' value='01.01.2020'><br>");
         echo("Введите оценку: <input id='date' type='number' name='ocenka' min='2' max='5' value='5'><br>");
- $id_0 = "stud_select";
+$id_0 = "stud_select";
         echo("<label for='$id_0'>Список студентов: </label>");
         echo("<select id='$id_0' name='$id_0'>");
         echo("<option value=''>--Please choose an option--</option>");
