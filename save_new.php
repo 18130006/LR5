@@ -63,6 +63,6 @@ break;
 }
 }
 ?>
-	</body>
+</body>
 </html>
 <?require_once 'engine/connection/connectionEnd.php';?>
