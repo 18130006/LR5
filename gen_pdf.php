@@ -7,6 +7,7 @@ $array = array("№ п/п", "ФИО студента", "Факультет", "Г
 ob_clean();
 error_reporting(E_ALL);
 ob_start();
+
 $pdf = new TCPDF('P', 'mm', 'A4', true, 'UTF-8');
 $pdf->setPrintHeader(false);
 $pdf->setPrintFooter(false);
