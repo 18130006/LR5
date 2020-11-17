@@ -3,7 +3,7 @@
 <?require_once 'engine/class/table.php';?>
 <html>
 <body>
- <?
+<?
         echo("<div>");
 $queryTab = "stud";
 $headText = "Таблица студентов";
@@ -11,22 +11,27 @@ $arrayTitle = array("№", "ФИО", "Факультет", "Группа", "Но
 $query = "SELECT * FROM $database.$queryTab  ORDER BY $database.$queryTab.id ASC";
 $result = mysqli_query($link, $query) or die("Не могу выполнить запрос!");
         echo("<div>");
+ 
 $a = new Table($headText, $arrayTitle, $result, $queryTab, true);
         echo("</div>");
+ 
 $queryTab = "pred";
 $headText = "Таблица предметов";
 $arrayTitle = array("№", "Название предмета", "ФИО преподавателя", "Изменить", "Добавить");
 $query = "SELECT * FROM $database.$queryTab  ORDER BY $database.$queryTab.id ASC";
 $result = mysqli_query($link, $query) or die("Не могу выполнить запрос!");
         echo("<div>");
+ 
 $a = new Table($headText, $arrayTitle, $result, $queryTab, true);
         echo("</div>");
+ 
 $queryTab = "vedm_info";
 $headText = "Таблица зачетная ведомость";
 $arrayTitle = array("№", "Дата сдачи зачета", "ФИО студента", "Название предмета", "Оценка", "Изменить", "Добавить");
 $query = "SELECT * FROM $database.$queryTab  ORDER BY $database.$queryTab.id ASC";
 $result = mysqli_query($link, $query) or die("Не могу выполнить запрос!");
         echo("<div>");
+ 
 $a = new Table($headText, $arrayTitle, $result, $queryTab, true);
         echo("</div>");
         echo("</div>");
